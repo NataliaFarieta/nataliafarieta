@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Natalia Farieta — Portafolio de Analítica de Datos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F5F4EF;
+    --paper-raised: #FFFFFF;
+    --ink: #16232E;
+    --ink-soft: #4B5A64;
+    --line: #D8D4C8;
+    --teal: #2E6F82;
+    --teal-deep: #163C48;
+    --ochre: #C17A2E;
+    --ochre-soft: #EADFC9;
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  html { scroll-padding-top: env(safe-area-inset-top, 0px); scroll-behavior: smooth; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #12191F;
+      --paper-raised: #182028;
+      --ink: #EDEBE3;
+      --ink-soft: #A9B4BA;
+      --line: #2A333B;
+      --teal: #6FB4C7;
+      --teal-deep: #9ED4E3;
+      --ochre: #E0A45C;
+      --ochre-soft: #2C2416;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #12191F;
+    --paper-raised: #182028;
+    --ink: #EDEBE3;
+    --ink-soft: #A9B4BA;
+    --line: #2A333B;
+    --teal: #6FB4C7;
+    --teal-deep: #9ED4E3;
+    --ochre: #E0A45C;
+    --ochre-soft: #2C2416;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Inter', -apple-system, sans-serif;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, .serif { font-family: 'Source Serif 4', Georgia, serif; }
+
+  .wrap { max-width: 880px; margin: 0 auto; padding: 0 28px; }
+
+  header.top {
+    display: flex; justify-content: space-between; align-items: baseline;
+    padding: 28px 0 22px;
+    border-bottom: 1px solid var(--line);
+  }
+  header.top .name { font-size: 17px; font-weight: 600; letter-spacing: 0.01em; }
+  header.top nav { display: flex; gap: 22px; font-size: 14px; }
+  header.top nav a { color: var(--ink-soft); text-decoration: none; }
+  header.top nav a:hover { color: var(--teal); }
+
+  .hero { padding: 64px 0 48px; }
+  .hero .kicker {
+    color: var(--teal); font-size: 15px; font-weight: 600; margin-bottom: 14px;
+  }
+  .hero h1 {
+    font-size: 40px; line-height: 1.18; font-weight: 600; max-width: 15ch;
+    letter-spacing: -0.01em;
+  }
+  .hero p.lede {
+    margin-top: 20px; max-width: 62ch; font-size: 17px; color: var(--ink-soft);
+  }
+  .hero .stat-row {
+    display: flex; gap: 40px; margin-top: 40px; flex-wrap: wrap;
+  }
+  .hero .stat-row div { min-width: 120px; }
+  .hero .stat-row .num {
+    font-family: 'Source Serif 4', serif; font-size: 30px; font-weight: 600; color: var(--teal-deep);
+  }
+  .hero .stat-row .lbl { font-size: 13px; color: var(--ink-soft); margin-top: 2px; }
+
+  section { padding: 54px 0; border-top: 1px solid var(--line); }
+  section > h2 {
+    font-size: 13px; font-weight: 600; text-transform: none;
+    color: var(--ink-soft); margin-bottom: 8px; letter-spacing: 0.02em;
+  }
+  section > p.intro { max-width: 62ch; color: var(--ink-soft); font-size: 15.5px; margin-bottom: 36px; }
+
+  .project {
+    padding: 30px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .project:last-child { border-bottom: none; }
+  .project .row1 {
+    display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap;
+  }
+  .project h3 { font-size: 22px; font-weight: 600; }
+  .project .when { font-size: 13px; color: var(--ink-soft); white-space: nowrap; }
+  .project p.desc { margin-top: 10px; max-width: 66ch; font-size: 15.5px; color: var(--ink); }
+  .project .metrics {
+    display: flex; gap: 28px; margin-top: 18px; flex-wrap: wrap;
+  }
+  .project .metrics .m .num {
+    font-family: 'Source Serif 4', serif; font-size: 21px; font-weight: 600; color: var(--ochre);
+  }
+  .project .metrics .m .lbl { font-size: 12.5px; color: var(--ink-soft); margin-top: 1px; }
+  .project .tags { margin-top: 16px; display: flex; gap: 8px; flex-wrap: wrap; }
+  .project .tags span {
+    font-size: 12px; color: var(--teal-deep); background: var(--ochre-soft);
+    padding: 4px 10px; border-radius: 3px;
+  }
+  .project .link { margin-top: 14px; font-size: 14px; }
+  .project .link a { color: var(--teal); text-decoration: none; border-bottom: 1px solid var(--teal); }
+  .project .link a:hover { opacity: 0.75; }
+
+  .skills-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px 40px;
+  }
+  .skills-grid .grp .grp-title { font-size: 13px; color: var(--ink-soft); margin-bottom: 8px; }
+  .skills-grid .grp .items { font-size: 15px; }
+
+  footer {
+    padding: 48px 0 64px; border-top: 1px solid var(--line);
+    display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 20px;
+  }
+  footer .msg { max-width: 42ch; font-family: 'Source Serif 4', serif; font-size: 18px; }
+  footer .contact { font-size: 14px; color: var(--ink-soft); text-align: right; }
+  footer .contact a { color: var(--teal); text-decoration: none; }
+  footer .contact div { margin-bottom: 4px; }
+
+  @media (max-width: 640px) {
+    .hero h1 { font-size: 30px; }
+    .skills-grid { grid-template-columns: 1fr; }
+    header.top nav { gap: 14px; font-size: 13px; }
+    footer { flex-direction: column; align-items: flex-start; }
+    footer .contact { text-align: left; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="top">
+    <div class="name">Natalia Farieta Marín</div>
+    <nav>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#stack">Stack</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <div class="kicker">Analítica de datos · química de formación</div>
+    <h1>Nueve años resolviendo problemas de negocio, ahora también con código.</h1>
+    <p class="lede">
+      Dirijo el área de Postventa de una compañía científica y curso una Maestría en Analítica de Datos.
+      Este portafolio reúne los proyectos aplicados del programa — desde un modelo antifraude bancario con
+      redes neuronales hasta el diseño de una base de datos para e-commerce — junto con el sistema de
+      indicadores que construí y opero en mi trabajo diario.
+    </p>
+    <div class="stat-row">
+      <div><div class="num">9</div><div class="lbl">proyectos aplicados</div></div>
+      <div><div class="num">4</div><div class="lbl">arquitecturas de redes neuronales comparadas</div></div>
+      <div><div class="num">356K+</div><div class="lbl">registros analizados en el mayor dataset</div></div>
+    </div>
+  </div>
+
+  <section id="proyectos">
+    <h2>Proyectos</h2>
+    <p class="intro">Trabajos de la Maestría en Analítica de Datos (Universidad Central, 2025–2026) y del sistema de indicadores que diseñé en mi rol actual.</p>
+
+    <div class="project">
+      <div class="row1">
+        <h3>Sistema de indicadores de Postventa</h3>
+        <div class="when">Casa Científica · 2026 — en producción</div>
+      </div>
+      <p class="desc">
+        Diseñé e implementé desde cero el sistema de KPIs del área de Postventa: modelo de datos, fórmulas
+        de cálculo automatizado y lógica de alertas por semáforo sobre facturación, satisfacción del
+        cliente, uso de recursos del equipo y conversión comercial. Es el único proyecto de este portafolio
+        que corre hoy sobre datos reales de una organización, no un dataset académico.
+      </p>
+      <div class="metrics">
+        <div class="m"><div class="num">96 pts</div><div class="lbl">Índice de Satisfacción (meta 80)</div></div>
+        <div class="m"><div class="num">72</div><div class="lbl">clientes activos monitoreados</div></div>
+        <div class="m"><div class="num">4</div><div class="lbl">KPIs con tablero automatizado</div></div>
+      </div>
+      <div class="tags"><span>Excel avanzado</span><span>Diseño de KPIs</span><span>Automatización de reportes</span></div>
+    </div>
+
+    <div class="project">
+      <div class="row1">
+        <h3>BrunoBank — Modelo antifraude con redes neuronales</h3>
+        <div class="when">Redes Neuronales · Trayecto 3 · Julio 2026</div>
+      </div>
+      <p class="desc">
+        Comparé cuatro arquitecturas de deep learning para detección de fraude transaccional — un
+        Perceptrón Multicapa, una BiLSTM con memoria secuencial, una CNN 2D adaptada a datos tabulares y
+        un modelo Multimodal que fusiona transacciones con texto de quejas de clientes. El trabajo incluye
+        una evaluación crítica: por qué el modelo más simple ganó, dónde el más sofisticado se sobreajustó,
+        y qué significa cada uno para sesgos, explicabilidad y cumplimiento (Ley 1581) en un banco real.
+      </p>
+      <div class="metrics">
+        <div class="m"><div class="num">1.000</div><div class="lbl">AUC del modelo MLP</div></div>
+        <div class="m"><div class="num">4</div><div class="lbl">arquitecturas evaluadas (ANN/RNN/CNN)</div></div>
+        <div class="m"><div class="num">100%</div><div class="lbl">recall en detección de fraude (MLP)</div></div>
+      </div>
+      <div class="tags"><span>TensorFlow / Keras</span><span>CNN · BiLSTM · NLP</span><span>Ética y sesgo algorítmico</span></div>
+      <div class="link"><a href="https://colab.research.google.com/drive/1yAPAhvQkxKr4vyHBlhfYmJB-yRsVxSnX?usp=sharing" target="_blank" rel="noopener">Ver Trayecto 3 (comparativo final) en Colab</a> &nbsp;·&nbsp; <a href="https://colab.research.google.com/drive/1Ko3f_WhPbi7NqnY0Lq1TX2lU2V9AFbft?usp=sharing" target="_blank" rel="noopener">Ver Trayecto 2 (BiLSTM + Multimodal)</a></div>
+    </div>
+
+    <div class="project">
+      <div class="row1">
+        <h3>Titanic — Pipeline de clasificación sin fuga de datos</h3>
+        <div class="when">Machine Learning · Trayecto 3 · Marzo 2026</div>
+      </div>
+      <p class="desc">
+        Reconstruí un ejercicio de clasificación previo usando <em>Pipelines</em> de Scikit-learn para
+        eliminar la fuga de datos (data leakage) del enfoque manual anterior. Comparé cuatro modelos con
+        validación cruzada estratificada y documenté por qué Random Forest ganó en test pero XGBoost fue
+        más estable en validación cruzada — una lección sobre qué métrica priorizar según el objetivo.
+      </p>
+      <div class="metrics">
+        <div class="m"><div class="num">0.87</div><div class="lbl">ROC-AUC, mejor modelo (Random Forest)</div></div>
+        <div class="m"><div class="num">4</div><div class="lbl">modelos comparados con CV k=5</div></div>
+        <div class="m"><div class="num">0</div><div class="lbl">fuga de datos entre train y test</div></div>
+      </div>
+      <div class="tags"><span>Scikit-learn Pipelines</span><span>Validación cruzada</span><span>Random Forest · XGBoost · SVM</span></div>
+      <div class="link"><a href="https://colab.research.google.com/drive/1pVz-HUM19mcThGlxYeOM0wLrpg9r0RUH?usp=sharing" target="_blank" rel="noopener">Ver notebook en Colab</a></div>
+    </div>
+
+    <div class="project">
+      <div class="row1">
+        <h3>Radiografía del hurto de vehículos en Colombia</h3>
+        <div class="when">Programación para Analítica de Datos · Octubre 2025</div>
+      </div>
+      <p class="desc">
+        Análisis exploratorio en R sobre los registros oficiales de la Policía Nacional (2003–2025):
+        limpieza y normalización de categorías, y storytelling visual sobre la evolución temporal, la
+        concentración territorial y las diferencias entre motocicletas y automóviles.
+      </p>
+      <div class="metrics">
+        <div class="m"><div class="num">356.038</div><div class="lbl">registros oficiales analizados</div></div>
+        <div class="m"><div class="num">60%</div><div class="lbl">de casos en Bogotá, Medellín y Cali</div></div>
+        <div class="m"><div class="num">80,8%</div><div class="lbl">de los hurtos ocurre en zona urbana</div></div>
+      </div>
+      <div class="tags"><span>R / tidyverse</span><span>ggplot2</span><span>Datos abiertos gubernamentales</span></div>
+    </div>
+
+    <div class="project">
+      <div class="row1">
+        <h3>Diseño de base de datos para e-commerce: SQL vs. NoSQL</h3>
+        <div class="when">Bases de Datos · Trayecto 1 · Abril 2026</div>
+      </div>
+      <p class="desc">
+        Actuando como consultora de arquitectura de datos para una startup ficticia de e-commerce
+        multi-tienda, diseñé el modelo Entidad-Relación completo (notación Crow's Foot), lo normalicé
+        hasta tercera forma normal y fundamenté técnicamente la recomendación de PostgreSQL sobre NoSQL
+        para un negocio con transacciones financieras críticas.
+      </p>
+      <div class="metrics">
+        <div class="m"><div class="num">8</div><div class="lbl">entidades modeladas</div></div>
+        <div class="m"><div class="num">3FN</div><div class="lbl">nivel de normalización alcanzado</div></div>
+        <div class="m"><div class="num">6M</div><div class="lbl">registros de ubicación proyectados a 3 años</div></div>
+      </div>
+      <div class="tags"><span>Modelado E-R</span><span>PostgreSQL</span><span>Normalización de datos</span></div>
+    </div>
+
+    <div class="project">
+      <div class="row1">
+        <h3>Proceso ETL y cubo de datos multidimensional</h3>
+        <div class="when">Bodegas de Datos · Universidad Central</div>
+      </div>
+      <p class="desc">
+        Construí un proceso ETL completo en cuatro etapas — extracción de datos crudos, transformación
+        (limpieza y normalización), cargue al modelo destino y diseño de un cubo de datos multidimensional
+        para análisis por distintas dimensiones de negocio.
+        <em>[Natalia: aquí va el contexto real — qué empresa o caso de negocio, qué dataset, cuántos
+        registros y qué decisión permitió tomar el cubo. Dime esos datos y te dejo esta descripción tan
+        completa como las demás.]</em>
+      </p>
+      <div class="tags"><span>ETL</span><span>Modelado dimensional</span><span>Cubo OLAP</span></div>
+      <div class="link">
+        <a href="https://colab.research.google.com/drive/11bPw6eP8rtrKPLFhaREyW-wP0_XjifyS?usp=sharing" target="_blank" rel="noopener">Extracción</a> ·
+        <a href="https://colab.research.google.com/drive/1q7ay-LlJV8I_t-EBqFn6kuuN4tKjGP5-?usp=drive_link" target="_blank" rel="noopener">Transformación</a> ·
+        <a href="https://colab.research.google.com/drive/1z3alchOzLN-KidTGfn7sAadDUs-wMclx?usp=sharing" target="_blank" rel="noopener">Cargue</a> ·
+        <a href="https://colab.research.google.com/drive/1bMJahF91SjT3pvnMmdo2sgNeCucksPEt?usp=sharing" target="_blank" rel="noopener">Cubo de datos</a>
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="row1">
+        <h3>Pistonazo S.A. — Dashboard ejecutivo en SAP Analytics Cloud</h3>
+        <div class="when">Dominio de Dashboard · Abril 2026</div>
+      </div>
+      <p class="desc">
+        Limpié y modelé tres años de datos de ventas de una distribuidora de autopartes con presencia en
+        18 países, resolviendo nulos, duplicados y errores de captura, y construí la historia ejecutiva de
+        ventas por país, línea y código de producto que se presentó a la vicepresidencia comercial.
+      </p>
+      <div class="metrics">
+        <div class="m"><div class="num">1.316</div><div class="lbl">registros depurados a 1.312 válidos</div></div>
+        <div class="m"><div class="num">18</div><div class="lbl">países en el dataset</div></div>
+        <div class="m"><div class="num">53%</div><div class="lbl">de la facturación en 4 países</div></div>
+      </div>
+      <div class="tags"><span>SAP Analytics Cloud</span><span>Data cleaning</span><span>Dashboards ejecutivos</span></div>
+    </div>
+
+    <div class="project">
+      <div class="row1">
+        <h3>Regresión lineal aplicada al mercado inmobiliario</h3>
+        <div class="when">Machine Learning · Febrero 2026</div>
+      </div>
+      <p class="desc">
+        Modelé el valor medio de vivienda sobre el dataset Housing comparando regresión simple contra
+        regresión múltiple, con análisis de outliers vía IQR y evaluación por R², MAE y RMSE para
+        cuantificar cuánto mejora el modelo al combinar variables frente a usarlas por separado.
+      </p>
+      <div class="metrics">
+        <div class="m"><div class="num">0.69</div><div class="lbl">R² del modelo múltiple (vs. 0,57 el mejor simple)</div></div>
+        <div class="m"><div class="num">489</div><div class="lbl">registros sin valores faltantes</div></div>
+      </div>
+      <div class="tags"><span>Regresión lineal</span><span>Scikit-learn</span><span>Análisis de outliers</span></div>
+      <div class="link"><a href="https://colab.research.google.com/drive/1C9j152MJjG64l278WghJsWXxvmaSph0U?usp=sharing" target="_blank" rel="noopener">Ver notebook en Colab</a></div>
+    </div>
+
+    <div class="project">
+      <div class="row1">
+        <h3>Automatización de RRHH — de pseudocódigo a Python</h3>
+        <div class="when">Programación · Noviembre 2025</div>
+      </div>
+      <p class="desc">
+        Diseñé y programé un sistema de gestión de personal para una empresa en crecimiento: registro de
+        empleados, cálculo de nómina e indicadores salariales, primero como algoritmo en Flowgorithm y
+        luego migrado a Python, con reflexión sobre escalabilidad a mayores volúmenes de datos.
+      </p>
+      <div class="metrics">
+        <div class="m"><div class="num">6</div><div class="lbl">funciones automatizadas de RRHH</div></div>
+        <div class="m"><div class="num">100</div><div class="lbl">registros soportados en el diseño</div></div>
+      </div>
+      <div class="tags"><span>Python</span><span>Pensamiento algorítmico</span><span>Estructuras de datos</span></div>
+      <div class="link"><a href="https://colab.research.google.com/drive/15CiwpQIy1zlJdr_lflrxqtCn4MnYhFI6" target="_blank" rel="noopener">Ver notebook en Colab</a></div>
+    </div>
+
+  </section>
+
+  <section id="stack">
+    <h2>Stack técnico</h2>
+    <div class="skills-grid">
+      <div class="grp">
+        <div class="grp-title">Lenguajes</div>
+        <div class="items">Python · R · SQL</div>
+      </div>
+      <div class="grp">
+        <div class="grp-title">Machine learning &amp; deep learning</div>
+        <div class="items">Scikit-learn · TensorFlow / Keras · Pipelines · Redes neuronales (MLP, CNN, RNN)</div>
+      </div>
+      <div class="grp">
+        <div class="grp-title">Datos &amp; visualización</div>
+        <div class="items">Power BI · Tableau · SAP Analytics Cloud · Excel avanzado</div>
+      </div>
+      <div class="grp">
+        <div class="grp-title">Bases de datos</div>
+        <div class="items">PostgreSQL · Modelado Entidad-Relación · Normalización</div>
+      </div>
+      <div class="grp">
+        <div class="grp-title">Dominio de negocio</div>
+        <div class="items">Customer Success · KPIs de servicio · Ventas B2B · Instrumentación analítica</div>
+      </div>
+      <div class="grp">
+        <div class="grp-title">Idiomas</div>
+        <div class="items">Español (nativo) · Inglés (B2 lectura/escritura)</div>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contacto">
+    <div class="msg">¿Un rol que combine análisis de datos con conocimiento de negocio? Conversemos.</div>
+    <div class="contact">
+      <div><a href="mailto:natalia.farieta@hotmail.com">natalia.farieta@hotmail.com</a></div>
+      <div><a href="https://linkedin.com/in/nataliafarietamarin" target="_blank" rel="noopener">linkedin.com/in/nataliafarietamarin</a></div>
+      <div>Bogotá, Colombia</div>
+    </div>
+  </footer>
+</div>
+
+</body>
+</html>
