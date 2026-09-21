@@ -10,7 +10,7 @@
         header { background: #1a365d; color: white; padding: 40px 20px; text-align: center; border-bottom: 4px solid #2b6cb0; }
         header h1 { margin: 0; font-size: 2.2rem; }
         header p { font-size: 1.1rem; color: #e2e8f0; margin-top: 10px; }
-        .btn-cv { display: inline-block; margin-top: 15px; padding: 10px 20px; background: #3182ce; color: white; text-decoration: none; border-radius: 5px; font-weight: bold; transition: background 0.3s; }
+        .btn-cv { display: inline-block; margin-top: 15px; padding: 12px 24px; background: #3182ce; color: white; text-decoration: none; border-radius: 6px; font-weight: bold; transition: background 0.3s; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
         .btn-cv:hover { background: #2b6cb0; }
         .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 25px 0; }
         .stat-card { background: white; padding: 20px; border-radius: 8px; text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.05); border-top: 3px solid #3182ce; }
@@ -19,9 +19,9 @@
         .project-card { background: white; border-radius: 8px; padding: 25px; margin-bottom: 25px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
         .project-card h3 { color: #1a365d; margin-top: 0; }
         .tag { display: inline-block; background: #edf2f7; color: #2d3748; padding: 4px 10px; border-radius: 12px; font-size: 0.8rem; font-weight: 600; margin-right: 5px; margin-bottom: 5px; }
-        .links-group { margin-top: 15px; }
-        .link-colab { display: inline-block; margin-right: 12px; margin-bottom: 8px; color: #3182ce; font-weight: bold; text-decoration: none; font-size: 0.9rem; }
-        .link-colab:hover { text-decoration: underline; }
+        .links-group { margin-top: 15px; padding-top: 10px; border-top: 1px solid #edf2f7; }
+        .link-colab { display: inline-block; margin-right: 12px; margin-bottom: 8px; color: #2b6cb0; font-weight: bold; text-decoration: none; font-size: 0.9rem; background: #ebf8ff; padding: 6px 12px; border-radius: 4px; border: 1px solid #bee3f8; }
+        .link-colab:hover { background: #bbe3f8; text-decoration: underline; }
     </style>
 </head>
 <body>
@@ -33,8 +33,8 @@
             <p style="font-size: 0.95rem; max-width: 800px; margin: 10px auto;">
                 Siete años resolviendo problemas de negocio, optimizando la retención de clientes y liderando operaciones técnicas B2B, combinando dominio científico con modelos predictivos y código.
             </p>
-            <!-- REEMPLAZA ESTE LINK CON EL ENLACE PÚBLICO DE TU HOJA DE VIDA EN GOOGLE DRIVE -->
-            <a href="https://docs.google.com/document/d/1B1ImbH0YS_tETz9_fFecgwj5Ide1HKv3l4z3Omy3cWA/edit?usp=drive_web" target="_blank" class="btn-cv">📄 Abrir / Descargar Hoja de Vida</a>
+            <!-- Enlace al archivo PDF de la Hoja de Vida directamente en tu repositorio -->
+            <a href="CV_Natalia_Farieta.pdf" target="_blank" rel="noopener noreferrer" class="btn-cv">📄 Abrir / Descargar Hoja de Vida (PDF)</a>
         </div>
     </header>
 
@@ -87,8 +87,8 @@
                 <span class="tag">TensorFlow / Keras</span><span class="tag">CNN</span><span class="tag">BiLSTM</span><span class="tag">NLP</span><span class="tag">Ética Algorítmica</span>
             </div>
             <div class="links-group">
-                <a href="https://colab.research.google.com/drive/1yAPAhvQkxKr4vyHBlhfYmJB-yRsVxSnX?usp=sharing" target="_blank" class="link-colab">🔗 Ver Trayecto 3 (Comparativo Antifraude)</a>
-                <a href="https://colab.research.google.com/drive/1Ko3f_WhPbi7NqnY0Lq1TX2lU2V9AFbft?usp=sharing" target="_blank" class="link-colab">🔗 Ver Trayecto 2 (Redes Recurrentes RNN)</a>
+                <a href="https://colab.research.google.com/drive/1yAPAhvQkxKr4vyHBlhfYmJB-yRsVxSnX?usp=sharing" target="_blank" rel="noopener noreferrer" class="link-colab">🔗 Ver Trayecto 3 (Comparativo Antifraude)</a>
+                <a href="https://colab.research.google.com/drive/1Ko3f_WhPbi7NqnY0Lq1TX2lU2V9AFbft?usp=sharing" target="_blank" rel="noopener noreferrer" class="link-colab">🔗 Ver Trayecto 2 (Redes Recurrentes RNN)</a>
             </div>
         </div>
 
@@ -106,24 +106,23 @@
                 <span class="tag">PySpark</span><span class="tag">API REST SECOP</span><span class="tag">Hive / OLAP</span><span class="tag">Arquitectura Medallion</span><span class="tag">Parquet</span>
             </div>
             <div class="links-group">
-                <a href="https://colab.research.google.com/drive/11bPw6eP8rtrKPLFhaREyW-wP0_XjifyS?usp=sharing" target="_blank" class="link-colab">🔗 1. Extracción</a>
-                <a href="https://colab.research.google.com/drive/1q7ay-LlJV8I_t-EBqFn6kuuN4tKjGP5-?usp=drive_link" target="_blank" class="link-colab">🔗 2. Transformación</a>
-                <a href="https://colab.research.google.com/drive/1z3alchOzLN-KidTGfn7sAadDUs-wMclx?usp=sharing" target="_blank" class="link-colab">🔗 3. Cargue</a>
-                <a href="https://colab.research.google.com/drive/1bMJahF91SjT3pvnMmdo2sgNeCucksPEt?usp=sharing" target="_blank" class="link-colab">🔗 4. Cubo de Datos</a>
+                <a href="https://colab.research.google.com/github/nataliafarieta/nataliafarieta/blob/main/Cargue.ipynb" target="_blank" rel="noopener noreferrer" class="link-colab">🔗 Notebook: Cargue.ipynb</a>
+                <a href="https://colab.research.google.com/github/nataliafarieta/nataliafarieta/blob/main/CuboDatos_(1).ipynb" target="_blank" rel="noopener noreferrer" class="link-colab">🔗 Notebook: CuboDatos_(1).ipynb</a>
             </div>
         </div>
 
         <!-- Proyecto 4: Titanic Pipeline ML -->
         <div class="project-card">
             <h3>Pipeline de Clasificación sin Fuga de Datos (Data Leakage)</h3>
-            <p style="color: #718096; font-size: 0.85rem; font-weight: bold;">Machine Learning · Trayectos 2 y 3 (2026)</p>
+            <p style="color: #718096; font-size: 0.85rem; font-weight: bold;">Machine Learning · Trayectos 1, 2 y 3 (2026)</p>
             <p>Construcción y evaluación de modelos de clasificación usando Scikit-learn Pipelines[cite: 3]. Comparación con validación cruzada estratificada entre Random Forest, XGBoost y SVM, aislando completamente las etapas de imputación y escalado para evitar la fuga de información entre train y test[cite: 3].</p>
             <div>
                 <span class="tag">Scikit-learn Pipelines</span><span class="tag">Machine Learning</span><span class="tag">Random Forest</span><span class="tag">XGBoost</span>
             </div>
             <div class="links-group">
-                <a href="https://colab.research.google.com/drive/1pVz-HUM19mcThGlxYeOM0wLrpg9r0RUH?usp=sharing" target="_blank" class="link-colab">🔗 Ver Notebook Titanic Pipeline (T3)</a>
-                <a href="https://colab.research.google.com/drive/1C9j152MJjG64l278WghJsWXxvmaSph0U?usp=sharing" target="_blank" class="link-colab">🔗 Ver Notebook ML Entregable (T2)</a>
+                <a href="https://colab.research.google.com/github/nataliafarieta/nataliafarieta/blob/main/T3__Titanic_(1).ipynb" target="_blank" rel="noopener noreferrer" class="link-colab">🔗 Notebook: T3_Titanic_(1).ipynb</a>
+                <a href="https://colab.research.google.com/github/nataliafarieta/nataliafarieta/blob/main/ENTREGABLE_1_MACHINE_LEARNING.ipynb" target="_blank" rel="noopener noreferrer" class="link-colab">🔗 Notebook: Entregable 1 ML</a>
+                <a href="https://colab.research.google.com/github/nataliafarieta/nataliafarieta/blob/main/Entregable_2_Machine__Learning.ipynb" target="_blank" rel="noopener noreferrer" class="link-colab">🔗 Notebook: Entregable 2 ML</a>
             </div>
         </div>
 
